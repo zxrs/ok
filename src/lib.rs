@@ -6,7 +6,7 @@ macro_rules! ok {
         match $val {
             Some(v) => Ok(v),
             None => Err($crate::anyhow!(
-                "[{}/{}] {} is none.",
+                "[{}:{}] {} is none.",
                 file!(),
                 line!(),
                 stringify!($val)
