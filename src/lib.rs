@@ -1,9 +1,11 @@
+pub use anyhow::anyhow;
+
 #[macro_export]
 macro_rules! ok {
     ($val:expr) => {
         match $val {
             Some(v) => Ok(v),
-            None => Err(anyhow!(
+            None => Err($crate::anyhow!(
                 "[{}/{}] {} is none.",
                 file!(),
                 line!(),
@@ -15,7 +17,7 @@ macro_rules! ok {
 
 #[cfg(test)]
 mod tests {
-    use anyhow::{anyhow, Result};
+    use anyhow::Result;
 
     #[test]
     fn ok() {

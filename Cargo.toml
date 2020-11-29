@@ -4,5 +4,5 @@ version = "0.1.0"
 authors = ["benki"]
 edition = "2018"
 
-[dev-dependencies]
+[dependencies]
 anyhow = "1.0"
